@@ -1,0 +1,23 @@
+<h1>이곳은 홈이다</h1>
+
+{% extends 'base.html' %}
+{% block content %}
+{% csrf_token %}
+<div>
+    <h3><a href="signup">회원가입</a></h3>
+    <h3><a href="login">로그인</a></h3>
+    <h3><a href="logout">로그아웃</a></h3>
+</div>
+
+<body>
+{% for User in users %}
+<tr>
+    <td>{{User.id}}님</td>
+    <td>{{User.pw}}비밀번호</td>
+    <td>{{User.email}}이메일</td>
+    <br>
+</tr>
+{% endfor %}
+</body>
+</table>
+{% endblock %}s
